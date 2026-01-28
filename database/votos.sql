@@ -1,0 +1,43 @@
+--------------------------------------------------------
+-- Archivo creado  - miércoles-enero-28-2026   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table VOTACIONES
+--------------------------------------------------------
+
+  CREATE TABLE "SYSTEM"."VOTACIONES" 
+   (	"ID_VOTO" NUMBER, 
+	"ID_DEPTO" NUMBER, 
+	"CANTIDAD_PERSONAS" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008496
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYSTEM"."SYS_C008496" ON "SYSTEM"."VOTACIONES" ("ID_VOTO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table VOTACIONES
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."VOTACIONES" ADD PRIMARY KEY ("ID_VOTO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table VOTACIONES
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."VOTACIONES" ADD CONSTRAINT "FK_DEPTO_VOT" FOREIGN KEY ("ID_DEPTO")
+	  REFERENCES "SYSTEM"."DEPARTAMENTOS" ("ID_DEPTO") ENABLE;
