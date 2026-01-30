@@ -12,7 +12,7 @@ BEGIN
   ORDS.ENABLE_SCHEMA(
       p_enabled             => TRUE,
       p_url_mapping_type    => 'BASE_PATH',
-      p_url_mapping_pattern => 'pays_off',
+      p_url_mapping_pattern => '',
       p_auto_rest_auth      => TRUE);
 
   ORDS.DEFINE_MODULE(
