@@ -49,7 +49,7 @@ BEGIN
   
   sys.htp.p(''{"items": ['');
   
-  -- Este bucle recorre los 18 departamentos que insertaste en la tabla
+  -- Este bucle recorre los 18 departamentos que se insertan en la tabla
   FOR d IN (SELECT id_depto, nombre_depto FROM departamentos ORDER BY id_depto) LOOP
     
     -- Si no es el primer registro, ponemos una coma para separar los objetos JSON
@@ -57,7 +57,7 @@ BEGIN
         sys.htp.p('',''); 
     END IF;
     
-    -- Llamamos a tu paquete modular para procesar el departamento actual
+    -- Llamamos al paquete modular para procesar el departamento actual
     v_res := pkg_voto_inteligente.obtener_analisis_completo(d.id_depto);
     
     -- Imprimimos los datos procesados por el PKG
